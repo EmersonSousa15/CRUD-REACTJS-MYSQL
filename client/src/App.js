@@ -18,7 +18,8 @@ function App() {
     Axios.post("http://localhost:3001/register", {
       name: values.name,
       cost: values.cost,
-      category: values.category
+      category: values.category,
+      image: values.image
     }).then(response => {
       console.log(response);
     }).catch(err => {
@@ -35,13 +36,17 @@ function App() {
 
   return (
     <div className="app--container">
-      <div className='register--container'>
-        <h1 className='title'>Scrim Shop</h1>
-        <input type='text' className='register--input' name='name' placeholder='Nome' onChange={handleChangeValues}></input>
-        <input type='text' className='register--input' name='cost' placeholder='Preço' onChange={handleChangeValues}></input>
-        <input type='text' className='register--input' name='category' placeholder='Categoria' onChange={handleChangeValues}></input>
-        <button className='register--button' onClick={handleClickButton}>Cadastrar</button>
-      </div>
+      <div className='box--left'>
+        <div className='register--container'>
+          <h1 className='title'>Shop Games</h1>
+          <input type='text' className='register--input' name='name' placeholder='Nome' onChange={handleChangeValues}></input>
+          <input type='text' className='register--input' name='image' placeholder='Link da imagem' onChange={handleChangeValues}></input>
+          <input type='text' className='register--input' name='cost' placeholder='Preço' onChange={handleChangeValues}></input>
+          <input type='text' className='register--input' name='category' placeholder='Categoria' onChange={handleChangeValues}></input>
+          <button className='register--button' onClick={handleClickButton}>Cadastrar</button>
+          <span className='gitHub'>&copy;EmersonSousa15</span>
+        </div>
+        </div>
       <div className='cards--container'>
         {typeof listGames !== "undefined" &&
         listGames.map((game) => {
@@ -53,6 +58,7 @@ function App() {
           name={game.name}
           cost={game.cost}
           category={game.category}
+          image={game.image}
           />
         })}
       </div>

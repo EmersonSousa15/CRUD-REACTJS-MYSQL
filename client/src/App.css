@@ -1,5 +1,14 @@
 .app--container{
-  text-align: center;
+  display: flex;
+}
+.box--left{ 
+  position: fixed;
+  width: 25%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #708090;
 }
 .title{
   padding: .5rem;
@@ -9,23 +18,49 @@
 .register--container{
   display: flex;
   flex-direction: column;
-  width: 300px;
-  margin: 1rem auto;
-  padding: 1rem;
+  padding: 2rem;
+  background-color: #8598ac;
+}
+.register--container .gitHub{
   text-align: center;
-  border-radius: 1rem;
-  border: 1px solid #000;
 }
 .register--input{
+  border: none;
   padding: .5rem;
   margin: .5rem 0;
-  border-radius: 1rem;
+  transition: 1s;
+  background: transparent;
+  border-bottom: 2px solid #708090;
 }
 .register--button{
-  width: 100px;
-  margin: auto;
-  padding: .5rem;
-  border-radius: 1rem;
+  width: 80%;
+  border: none;
+  margin: .5rem auto;
+  padding: .8rem;
   cursor: pointer;
+  transition: 1s;
+  background-color: #3d637c;
+}
+::placeholder, .register--input, .register--button, .title{
+  color: #fff;
+}
+.register--input:focus-within{
+  border-color: #37586e;
+}
+.register--button:hover{
+  background-color: #37586e;
 }
 
+@media screen and (max-width: 980px){
+  .app--container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .box--left{ 
+    position: static;
+    width: 300px;
+    height: 80vh;
+  }
+}

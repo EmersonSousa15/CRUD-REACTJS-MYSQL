@@ -17,12 +17,18 @@ export default function Cards(props) {
             name={props.name} 
             cost={props.cost} 
             category={props.category} 
+            image={props.image}
             listCard={props.listGames} 
             setListGames={props.setListGames}/>
             <div className='card--container' onClick={() => handleClickCard()}>
-                <h1 className='title'>{props.name}</h1>
-                <p className='card--cost'> R$ {props.cost}</p>
-                <p className='card--category'>{props.category}</p>
+                <img className='card--image' src={props.image}></img>
+                <div className='informations--container'>
+                    <div className='cat--til--container'>
+                        <h1 className='title'>{props.name}</h1>
+                        <p className='card--category'>{props.category}</p>
+                    </div>
+                    <p className='card--cost'> R$ {props.cost}</p>
+                </div>    
             </div>
         </>
     )

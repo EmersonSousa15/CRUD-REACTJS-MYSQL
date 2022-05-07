@@ -4,17 +4,16 @@ import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import Axios from 'axios'
 
 export default function FormDialog(props) {
-   
     const [editValues, setEditValues] = useState({
         id: props.id,
         name: props.name,
         cost: props.cost,
-        category: props.category
+        category: props.category,
+        image: props.image
     });
 
     const handleSave = () => {
@@ -22,7 +21,8 @@ export default function FormDialog(props) {
             id: editValues.id,
             name: editValues.name,
             cost: editValues.cost,
-            category: editValues.category
+            category: editValues.category,
+            image: editValues.image
         })
 
         handleClose();
@@ -59,6 +59,17 @@ export default function FormDialog(props) {
             id="name"
             label="Nome do Jogo"
             defaultValue={props.name}
+            type="text"
+            fullWidth
+            variant="standard"
+            onChange={handleEditValues}
+          />
+          <TextField
+            autoFocus
+            margin="dense"
+            id="image"
+            label="Imagem do jogo"
+            defaultValue={props.image}
             type="text"
             fullWidth
             variant="standard"
