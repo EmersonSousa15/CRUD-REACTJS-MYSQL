@@ -20,4 +20,4 @@ Change your mySQL database data ```server/index.js```
 
 ```$ npm install``` or ```$ yarn```
 
-```$ npm rum devStart```
+```$ npm rum dev```
